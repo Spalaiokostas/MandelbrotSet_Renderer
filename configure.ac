@@ -17,6 +17,8 @@ AC_CHECK_LIB([gmp], [__gmpz_init],[], [AC_MSG_ERROR([GNU MP not found, se https:
 AC_PATH_X
 AC_CHECK_HEADERS([stdlib.h])
 
+AC_OPENMP
+
 # Checks for typedefs, structures, and compiler characteristics.
 
 # Checks for library functions.
