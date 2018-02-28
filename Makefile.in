@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS= -Wall -g -O3 -I . -fopenmp -lgmp -lX11
+
+ODIR=obj
+
+DEPS= mandelbrot.h
+OBJ= mandelbrot.o main.o
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+mandelbrot: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
+	
+clean: 
+	rm -f *.o *~ mandelbrot
+
